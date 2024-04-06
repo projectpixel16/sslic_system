@@ -17,6 +17,7 @@
 			                	</div>
 			          		</div>
 			             	<div class="text-center"><button type="submit" class="w-full">Login</button></div>
+			             	<a href="../admin/admin_dashboard">login</a>
 		             	</div>
 		            </form>
 		        </div>

@@ -96,6 +96,10 @@
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
+  <script src="//cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
+  <script>
+    let table = new DataTable('#myTable');
+  </script>
 
 </body>
 

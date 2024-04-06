@@ -27,7 +27,8 @@
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
-
+  <link href="//cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- =======================================================
   * Template Name: Moderna - v2.1.0
   * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
@@ -35,5 +36,6 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
