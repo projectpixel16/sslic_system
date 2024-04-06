@@ -44,5 +44,20 @@ class Admin extends CI_Controller {
         $this->load->view('template/footer_admin');
     }
 
+    public function admin_approved()
+    {
+        $this->load->view('template/header_admin');
+        $this->load->view('template/navbar_admin2');
+        $this->load->view('admin/admin_approved');
+        $this->load->view('template/footer_admin');
+    }
+    public function admin_declined()
+    {
+        $this->load->view('template/header_admin');
+        $this->load->view('template/navbar_admin2');
+        $this->load->view('admin/admin_declined');
+        $this->load->view('template/footer_admin');
+    }
+
     
 }

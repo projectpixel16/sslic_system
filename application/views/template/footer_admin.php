@@ -99,6 +99,8 @@
   <script src="//cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
   <script>
     let table = new DataTable('#myTable');
+    let table1 = new DataTable('#myTable1');
+    let table2 = new DataTable('#myTable2');
   </script>
 
 </body>

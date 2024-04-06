@@ -30,25 +30,22 @@ class Main extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('template/header');
-        $this->load->view('template/navbar');
         $this->load->view('main/dashboard');
-        $this->load->view('template/footer');
     }
 
-    public function user_form()
+    public function app_form()
     {
         $this->load->view('template/header');
         $this->load->view('template/navbar');
-        $this->load->view('main/user_form');
+        $this->load->view('main/app_form');
         $this->load->view('template/footer');
     }
 
-    public function user_upload()
+    public function app_upload()
     {
         $this->load->view('template/header');
         $this->load->view('template/navbar');
-        $this->load->view('main/user_upload');
+        $this->load->view('main/app_upload');
         $this->load->view('template/footer');
     }
 

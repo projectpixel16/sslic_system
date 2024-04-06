@@ -1,4 +1,4 @@
-<header id="header" class="fixed-top header-transparent">
+<header id="header" class="fixed-top">
     <div class="container">
 
         <div class="logo float-left">
@@ -31,7 +31,7 @@
                     <li><a href="#">Drop Down 5</a></li>
                 </ul>
             </li> -->
-            <li><a href="admin/login" id="login">Login</a></li>
+            <li><a href="../admin/login" id="login">Login</a></li>
         </ul>
         </nav><!-- .nav-menu -->
     </div>

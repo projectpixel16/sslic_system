@@ -4,8 +4,8 @@
 	    <div class="container">
 	        <div class="row">
 		         <div class="col-lg-4 offset-lg-4">
-
-		            <form action="forms/contact.php" method="post" role="form" class="php-email-form py-20 mt-5">
+		         	<div class="bg-white shadow-md rounded-md">
+		            <form action="forms/contact.php" method="post" role="form" class="php-email-form py-20 mt-5 !shadow-none">
 		            	<div class="my-2">
 			            	<h3 class="text-center font-bold my-3 uppercase">Login</h3>
 			              	<div class="form-row">
@@ -20,6 +20,7 @@
 			             	<a href="../admin/admin_dashboard">login</a>
 		             	</div>
 		            </form>
+		            </div>
 		        </div>
 	        </div>
 	    </div>

@@ -16,7 +16,7 @@
             <li class="drop-down">
                 <a href="#">John Smith</a>
                 <ul>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="../main/dashboard">Logout</a></li>
                     <!-- <li class="drop-down"><a href="#">Drop Down 2</a>
                         <ul>
                             <li><a href="#">Deep Drop Down 1</a></li>
