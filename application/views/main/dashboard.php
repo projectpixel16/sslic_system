@@ -85,7 +85,7 @@
           <div class="carousel-container">
             <h2 class="animate__animated animate__fadeInDown">WELCOME</span></h2>
             <p class="animate__animated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a href="main/app_form" class="btn-get-started animate__animated animate__fadeInUp !bg-orange-500 hover:!bg-orange-600">Apply Loan Now</a>
+            <a href="main/login" class="btn-get-started animate__animated animate__fadeInUp !bg-orange-500 hover:!bg-orange-600">Apply Loan Now</a>
           </div>
         </div>
       </div>

@@ -28,6 +28,14 @@ class Main extends CI_Controller {
         }
     } 
 
+    public function login()
+    {
+        $this->load->view('template/header_admin');
+        $this->load->view('template/navbar_admin');
+        $this->load->view('main/login');
+        $this->load->view('template/footer_admin');
+    }
+
     public function index()
     {
         $this->load->view('main/dashboard');
