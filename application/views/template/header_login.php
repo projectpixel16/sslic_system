@@ -1,15 +1,8 @@
-<?php
-  if (!isset($_SESSION['user_id']) || ($_SESSION['user_id'] == '')) {
-        echo "<script>alert('You are currently not logged in.'); 
-        window.location ='".base_url()."main/login'; </script>";
-        exit();
-    } 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>SILAY SANDIEGO LENDING INVESTOR INC.</title>
@@ -34,8 +27,8 @@
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
-  <link href="//cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
   <!-- =======================================================
   * Template Name: Moderna - v2.1.0
   * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/

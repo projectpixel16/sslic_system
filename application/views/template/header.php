@@ -1,11 +1,18 @@
+<?php
+if (!isset($_SESSION['user_id']) || ($_SESSION['user_id'] == '')) {
+        echo "<script>alert('You are currently not logged in.'); 
+        window.location ='".base_url()."main/login'; </script>";
+        exit();
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Moderna Bootstrap Template - Index</title>
+  <title>SILAY SANDIEGO LENDING INVESTOR INC.</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
