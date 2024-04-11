@@ -57,11 +57,13 @@ class Main extends CI_Controller {
                'logged_in'=> TRUE
             );
             $this->session->set_userdata($newdata);
-            redirect(base_url().'main/app_form');
+            echo 'success';
+            //redirect(base_url().'main/app_form');
         }
         else{
-            $this->session->set_flashdata('error_msg', 'Username And Password Do not Exist!');
-            redirect(base_url().'main/login');
+            echo 'error';
+            // $this->session->set_flashdata('error_msg', 'Username And Password Do not Exist!');
+            // redirect(base_url().'main/login');
             //$this->load->view('template/header_login');
             //$this->load->view('main/login');
             // $this->load->view('template/footer');       
@@ -89,6 +91,68 @@ class Main extends CI_Controller {
         $this->load->view('main/app_form');
         $this->load->view('template/footer');
     }
+
+    public function insert_application(){
+        $dest= realpath(APPPATH . '../uploads/images/');
+        $error_ext=0;
+        $identifier=date('Ymdhis');
+        if(!empty($_FILES['payslip']['name'])){
+            $exc= basename($_FILES['payslip']['name']);
+            $exc=explode('.',$exc);
+            $ext1=$exc[1];
+            if($ext1=='php' || ($ext1!='png' && $ext1 != 'jpg' && $ext1!='jpeg')){
+                $error_ext++;
+            }else {
+                $filename1='current_payslip_'.$identifier.'.'.$ext1;
+                move_uploaded_file($_FILES["payslip"]['tmp_name'], $dest.'/'.$filename1); 
+            }
+        }
+        if(!empty($_FILES['promissory']['name'])){
+            $exc= basename($_FILES['promissory']['name']);
+            $exc=explode('.',$exc);
+            $ext1=$exc[1];
+            if($ext1=='php'  || ($ext1!='png' && $ext1 != 'jpg' && $ext1!='jpeg')){
+                $error_ext++;
+            }else {
+                $filename2='promissory_'.$identifier.'.'.$ext1;
+                move_uploaded_file($_FILES["promissory"]['tmp_name'], $dest.'/'.$filename2); 
+            }
+        }
+
+        if(!empty($_FILES['first']['name'])){
+            $exc= basename($_FILES['first']['name']);
+            $exc=explode('.',$exc);
+            $ext1=$exc[1];
+            if($ext1=='php'  || ($ext1!='png' && $ext1 != 'jpg' && $ext1!='jpeg')){
+                $error_ext++;
+            }else {
+                $filename3='ID1_'.$identifier.'.'.$ext1;
+                move_uploaded_file($_FILES["first"]['tmp_name'], $dest.'/'.$filename3);
+            }
+        }
+
+        if(!empty($_FILES['second']['name'])){
+            $exc= basename($_FILES['second']['name']);
+            $exc=explode('.',$exc);
+            $ext1=$exc[1];
+            if($ext1=='php'  || ($ext1!='png' && $ext1 != 'jpg' && $ext1!='jpeg')){
+                $error_ext++;
+            }else {
+                $filename4='ID2_'.$identifier.'.'.$ext1;
+                move_uploaded_file($_FILES["second"]['tmp_name'], $dest.'/'.$filename4);
+            }
+        }
+
+        $personal_data = array(
+            'fullname'=>$this->input->post('name'),
+            'bday'=>$this->input->post('bday'),
+            'payslip_img'=>$filename1,
+            'promissory_img'=>$filename2,
+            'first_id'=>$filename3,
+            'second_id'=>$filename4
+        );
+        $this->super_model->insert_into("personal_data", $personal_data);
+    }   
 
     public function app_upload()
     {

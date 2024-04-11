@@ -2371,3 +2371,11 @@ section {
 #footer .credits a {
   color: #a2cce3;
 }
+
+.btn_login{
+  background: #1e4356;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+}
