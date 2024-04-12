@@ -96,6 +96,10 @@ class Main extends CI_Controller {
         $dest= realpath(APPPATH . '../uploads/images/');
         $error_ext=0;
         $identifier=date('Ymdhis');
+        $filename1='';
+        $filename2='';
+        $filename3='';
+        $filename4='';
         if(!empty($_FILES['payslip']['name'])){
             $exc= basename($_FILES['payslip']['name']);
             $exc=explode('.',$exc);
@@ -142,16 +146,111 @@ class Main extends CI_Controller {
                 move_uploaded_file($_FILES["second"]['tmp_name'], $dest.'/'.$filename4);
             }
         }
-
         $personal_data = array(
             'fullname'=>$this->input->post('name'),
             'bday'=>$this->input->post('bday'),
+            'age'=>$this->input->post('age'),
+            'sex'=>$this->input->post('sex'),
+            'spouse'=>$this->input->post('spouse'),
+            'no_dependents'=>$this->input->post('dependents'),
+            'no_studying'=>$this->input->post('studying'),
+            'home_address'=>$this->input->post('home'),
+            'tel_no'=>$this->input->post('tel_no'),
+            'house_type'=>$this->input->post('house_type'),
+            'tin'=>$this->input->post('tin'),
+            'business_address'=>$this->input->post('business_address'),
+            'bus_telno'=>$this->input->post('bus_telno'),
+            'employer'=>$this->input->post('employer'),
+            'position'=>$this->input->post('position'),
+            'nature_business'=>$this->input->post('nature_business'),
+            'length_service'=>$this->input->post('length_service'),
+            'spouse_employment'=>$this->input->post('spouse_employment'),
+            'spouse_position'=>$this->input->post('spouse_position'),
+            'spouse_address'=>$this->input->post('spouse_address'),
+            'spouse_telno'=>$this->input->post('spouse_telno'),
+            'exp_food'=>$this->input->post('food'),
+            'exp_water'=>$this->input->post('water'),
+            'exp_education'=>$this->input->post('education'),
+            'exp_others'=>$this->input->post('others'),
+            'savings_account'=>$this->input->post('savings_account'),
+            'checking_account'=>$this->input->post('checking_account'),
+            'loan_amount'=>$this->input->post('loan_amount'),
+            'loan_term'=>$this->input->post('loan_term'),
+            'collateral_offered'=>$this->input->post('collateral_offered'),
+            'user_id'=>$_SESSION['user_id'],
             'payslip_img'=>$filename1,
             'promissory_img'=>$filename2,
             'first_id'=>$filename3,
             'second_id'=>$filename4
         );
-        $this->super_model->insert_into("personal_data", $personal_data);
+        $personal_id=$this->super_model->insert_return_id("personal_data", $personal_data);
+        if($this->input->post('countSource')==''){
+            $ctr =  1;
+        } else{
+            $ctr =  $this->input->post('countSource');
+        }
+        if($this->input->post('countCredit')==''){
+            $ctr1 =  1;
+        } else{
+            $ctr1 =  $this->input->post('countCredit');
+        }
+        if($this->input->post('countPersonal')==''){
+            $ctr2 =  1;
+        } else{
+            $ctr2 =  $this->input->post('countPersonal');
+        }
+        if($this->input->post('countOwned')==''){
+            $ctr3 =  1;
+        } else{
+            $ctr3 =  $this->input->post('countOwned');
+        }
+        for($x=1; $x<=$ctr;$x++){
+            if($this->input->post('nature_source'.$x)!=''){
+                $source_income = array(
+                    'personal_id'=>$personal_id,
+                    'nature'=>$this->input->post('nature_source'.$x),
+                    'amount'=>$this->input->post('source_amount'.$x)
+                );
+                $this->super_model->insert_into("source_income", $source_income);
+            }
+        }
+        for($y=1; $y<=$ctr1;$y++){
+            if($this->input->post('creditor'.$y)!=''){
+                $credit_reference = array(
+                    'personal_id'=>$personal_id,
+                    'creditor'=>$this->input->post('creditor'.$y),
+                    'address'=>$this->input->post('creditor_address'.$y),
+                    'orig_amount'=>$this->input->post('original_amount'.$y),
+                    'loan_balance'=>$this->input->post('loan_balance'.$y),
+                    'collateral'=>$this->input->post('collateral'.$y),
+                );
+                $this->super_model->insert_into("credit_reference", $credit_reference);
+            }
+        }
+        for($z=1; $z<=$ctr2;$z++){
+            if($this->input->post('personal_name'.$z)!=''){
+                $personal_reference = array(
+                    'personal_id'=>$personal_id,
+                    'name'=>$this->input->post('personal_name'.$z),
+                    'address'=>$this->input->post('personal_address'.$z),
+                    'employment'=>$this->input->post('personal_employment'.$z),
+                    'relation'=>$this->input->post('personal_relation'.$z)
+                );
+                $this->super_model->insert_into("personal_reference", $personal_reference);
+            }
+        }
+        for($a=1; $a<=$ctr3;$a++){
+            if($this->input->post('kind'.$a)!=''){
+                $personal_properties = array(
+                    'personal_id'=>$personal_id,
+                    'kind'=>$this->input->post('kind'.$a),
+                    'location'=>$this->input->post('location'.$a),
+                    'value'=>$this->input->post('value'.$a),
+                    'encumbrance'=>$this->input->post('encumbrance'.$a)
+                );
+                $this->super_model->insert_into("personal_properties", $personal_properties);
+            }
+        }
     }   
 
     public function app_upload()

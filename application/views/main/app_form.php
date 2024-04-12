@@ -44,11 +44,17 @@
                                     <td colspan='1'>Name:</td>
                                     <td colspan='1'><input type='text' id='name'></td>
                                     <td colspan='1'>Bithdate:</td>
-                                    <td colspan='1'><input type='text' id='bday'></td>
+                                    <td colspan='1'><input type='date' id='bday'></td>
                                     <td colspan='1'>Age:</td>
-                                    <td colspan='1'><input type='text' id='age'></td>
+                                    <td colspan='1'><input type='number' id='age'></td>
                                     <td colspan='1'>Sex:</td>
-                                    <td colspan='1'><input type='text' id='sex'></td>
+                                    <td colspan='1'>
+                                        <select id='sex'>
+                                            <option value="">--Select Gender--</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan='1'>Spouse:</td>
@@ -76,7 +82,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan='1'>Business Address:</td>
-                                    <td colspan='3'><textarea style="width:100%" id="bussiness_address"></textarea></td>
+                                    <td colspan='3'><textarea style="width:100%" id="business_address"></textarea></td>
                                     <td colspan='1'>Tel. No.:</td>
                                     <td colspan='1'><input type='text' id='bus_telno'></td>
                                 </tr>
@@ -112,10 +118,13 @@
                                 </tr>
                                 <tr class="append" id="append0">
                                     <td colspan='1'>Nature:</td>
-                                    <td colspan='3'><textarea style="width:100%" id="nature_source[]"></textarea></td>
+                                    <td colspan='3'><textarea style="width:100%" id="nature_source1" class='nature'></textarea></td>
                                     <td colspan='1'>Amount:</td>
-                                    <td colspan='1'><input type='text' id='source_amount[]'></td>
-                                    <td colspan='1' class='addmoreappend'><button type='button' class="btn btn-sm btn-primary addSource" id="addSource">+</button></td>
+                                    <td colspan='1'><input type='text' id='source_amount1' class='amount'></td>
+                                    <td colspan='1' class='addmoreappend'>
+                                        <input type="text" id="countSource">
+                                        <button type='button' class="btn btn-sm btn-primary addSource" id="addSource">+</button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan='1'>TOTAL:</td>
@@ -168,12 +177,15 @@
                                     <td colspan='1'>Collateral</td>
                                 </tr>
                                 <tr class="credit" id="credit0">
-                                    <td colspan='1'><input type='text' id='creditor'></td>
-                                    <td colspan='1'><input type='text' id='creditor_address'></td>
-                                    <td colspan='1'><input type='text' id='original_amount'></td>
-                                    <td colspan='1'><input type='text' id='loan_balance'></td>
-                                    <td colspan='1'><input type='text' id='collateral'></td>
-                                    <td colspan='1' class='addmorecredit'><button type="button" class="btn btn-sm btn-primary addCredit" id="addCredit">+</button></td>
+                                    <td colspan='1'><input type='text' id='creditor1' class='creditor'></td>
+                                    <td colspan='1'><input type='text' id='creditor_address1' class='creditor_address'></td>
+                                    <td colspan='1'><input type='number' id='original_amount1' class='original_amount'></td>
+                                    <td colspan='1'><input type='number' id='loan_balance1' class='loan_balance'></td>
+                                    <td colspan='1'><input type='text' id='collateral1' class='collateral'></td>
+                                    <td colspan='1' class='addmorecredit'>
+                                        <input type="text" id="countCredit">
+                                        <button type="button" class="btn btn-sm btn-primary addCredit" id="addCredit">+</button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan='2'>VI. Personal Reference</td>
@@ -185,11 +197,14 @@
                                     <td colspan='1'>Relation</td>
                                 </tr>
                                 <tr class="personal" id="personal0">
-                                    <td colspan='1'><textarea id="personal_name"></textarea></td>
-                                    <td colspan='1'><textarea id="personal_address"></textarea></td>
-                                    <td colspan='1'><textarea id="personal_employement"></textarea></td>
-                                    <td colspan='1'><textarea id="personal_relation"></textarea></td>
-                                    <td colspan='1' class='addmorepersonal'><button type="button" class="btn btn-sm btn-primary addPersonal" id="addPersonal">+</button></td>
+                                    <td colspan='1'><textarea id="personal_name1" class="personal_name"></textarea></td>
+                                    <td colspan='1'><textarea id="personal_address1" class="personal_address"></textarea></td>
+                                    <td colspan='1'><textarea id="personal_employment1" class="personal_employment"></textarea></td>
+                                    <td colspan='1'><textarea id="personal_relation1" class="personal_relation"></textarea></td>
+                                    <td colspan='1' class='addmorepersonal'>
+                                        <input type="text" id="countPersonal">
+                                        <button type="button" class="btn btn-sm btn-primary addPersonal" id="addPersonal">+</button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan='2'>VII. REAL AND PERSONAL PROPERTIES OWNED</td>
@@ -201,11 +216,14 @@
                                     <td colspan='1'>ENCUMBRANCE</td>
                                 </tr>
                                 <tr class="owned" id="owned0">
-                                    <td colspan='1'><textarea id="kind"></textarea></td>
-                                    <td colspan='1'><textarea id="location"></textarea></td>
-                                    <td colspan='1'><textarea id="value"></textarea></td>
-                                    <td colspan='1'><textarea id="encumbrance"></textarea></td>
-                                    <td colspan='1'  class='addmoreowned'><button type="button" class="btn btn-sm btn-primary addOwned" id="addOwned">+</button></td>
+                                    <td colspan='1'><textarea id="kind1" class="kind"></textarea></td>
+                                    <td colspan='1'><textarea id="location1" class="location"></textarea></td>
+                                    <td colspan='1'><textarea id="value1" class="value"></textarea></td>
+                                    <td colspan='1'><textarea id="encumbrance1" class="encumbrance"></textarea></td>
+                                    <td colspan='1'  class='addmoreowned'>
+                                        <input type="text" id="countOwned">
+                                        <button type="button" class="btn btn-sm btn-primary addOwned" id="addOwned">+</button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan='1'></td>
