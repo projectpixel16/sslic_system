@@ -1,7 +1,7 @@
 <?php
   if (!isset($_SESSION['user_id']) || ($_SESSION['user_id'] == '')) {
         echo "<script>alert('You are currently not logged in.'); 
-        window.location ='".base_url()."main/login'; </script>";
+        window.location ='".base_url()."admin/login'; </script>";
         exit();
     } 
 ?>

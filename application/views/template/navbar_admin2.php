@@ -13,10 +13,12 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Contact</a></li>
             <li><a href="portfolio.html">FAQ</a></li> -->
+            <li><a href="../admin/admin_dashboard">Dashboard</a></li>
+            <li><a href="../admin/admin_loaners">Users</a></li>
             <li class="drop-down">
-                <a href="#">John Smith</a>
+                <a href="#"><?php echo $_SESSION['fullname']; ?></a>
                 <ul>
-                    <li><a href="../main/dashboard">Logout</a></li>
+                    <li><a href="../admin/user_logout">Logout</a></li>
                     <!-- <li class="drop-down"><a href="#">Drop Down 2</a>
                         <ul>
                             <li><a href="#">Deep Drop Down 1</a></li>
@@ -30,8 +32,7 @@
                     <li><a href="#">Drop Down 4</a></li>
                     <li><a href="#">Drop Down 5</a></li> -->
                 </ul>
-            </li> -->
-            <!-- <li><a href="contact.html" id="login">Login</a></li> -->
+            </li>
         </ul>
         </nav><!-- .nav-menu -->
     </div>

@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main extends CI_Controller {
-
     function __construct(){
         parent::__construct();
         $this->load->helper(array('form', 'url'));
@@ -10,8 +9,6 @@ class Main extends CI_Controller {
         date_default_timezone_set("Asia/Manila");
         $this->load->model('super_model');
         $this->load->database();
- 
-       
         function arrayToObject($array){
             if(!is_array($array)) { return $array; }
             $object = new stdClass();
@@ -42,31 +39,23 @@ class Main extends CI_Controller {
         $count=$this->super_model->login_user($username,$password);
         if($count>0){   
             $password1 =md5($this->input->post('password'));
-            $fetch=$this->super_model->select_custom_where("users", "username = '$username' AND (password = '$password' OR password = '$password1')");
+            $fetch=$this->super_model->select_custom_where("users", "username = '$username' AND (password = '$password' OR password = '$password1') AND usertype='0'");
             foreach($fetch AS $d){
                 $userid = $d->user_id;
-                //$usertype = $d->usertype_id;
                 $username = $d->username;
                 $fullname = $d->fullname;
             }
             $newdata = array(
                'user_id'=> $userid,
-               //'usertype'=> $usertype,
                'username'=> $username,
                'fullname'=> $fullname,
                'logged_in'=> TRUE
             );
             $this->session->set_userdata($newdata);
             echo 'success';
-            //redirect(base_url().'main/app_form');
         }
         else{
             echo 'error';
-            // $this->session->set_flashdata('error_msg', 'Username And Password Do not Exist!');
-            // redirect(base_url().'main/login');
-            //$this->load->view('template/header_login');
-            //$this->load->view('main/login');
-            // $this->load->view('template/footer');       
         }
     }
 
@@ -75,8 +64,6 @@ class Main extends CI_Controller {
         $this->load->view('template/header');
         $this->load->view('main/login');
         $this->load->view('template/footer');
-        // echo "<script>alert('You have successfully logged out.'); 
-        // window.location ='".base_url()."main/index'; </script>";
     }
 
     public function index()
@@ -181,7 +168,8 @@ class Main extends CI_Controller {
             'payslip_img'=>$filename1,
             'promissory_img'=>$filename2,
             'first_id'=>$filename3,
-            'second_id'=>$filename4
+            'second_id'=>$filename4,
+            'status'=>'Pending'
         );
         $personal_id=$this->super_model->insert_return_id("personal_data", $personal_data);
         if($this->input->post('countSource')==''){

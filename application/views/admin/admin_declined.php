@@ -28,15 +28,16 @@
 			            		</tr>
 			            	</thead>
 			            	<tbody>
+								<?php foreach($declined AS $d){ ?>
 			            		<tr>
-			            			<td class="border p-2 text-sm">Ligaya Reyes</td>
+			            			<td class="border p-2 text-sm"><?php echo $d->fullname; ?></td>
 			            			<td class="border p-2 text-sm" >
 			            				<div class="flex justify-center space-x-1">
 			            					<button class="p-1 px-2 bg-blue-500 text-white text-xs font-bold rounded">Send SMS</button>
-			            					<!-- <button class="p-1 px-2 bg-yellow-500 text-white text-xs font-bold rounded">Move to pending</button> -->
 			            				</div>
 			            			</td>
 			            		</tr>
+								<?php } ?>
 			            	</tbody>
 			            </table>
 			        </div>

@@ -31,7 +31,7 @@
                     <li><a href="#">Drop Down 5</a></li>
                 </ul>
             </li> -->
-            <li><a href="../admin/login" id="login">Login</a></li>
+            <!-- <li><a href="../admin/login" id="login">Login</a></li> -->
         </ul>
         </nav><!-- .nav-menu -->
     </div>

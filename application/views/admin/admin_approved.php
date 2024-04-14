@@ -1,15 +1,56 @@
+<script>
+	function sendSMS(personal_id,contact_no){
+		const myHeaders = new Headers();
+		myHeaders.append("Authorization", "App 2fae3f1ba142c2e60d2f4ede029a6bc7-e3b729f7-a404-4534-ab04-13a96d91ceff");
+		myHeaders.append("Content-Type", "application/json");
+		myHeaders.append("Accept", "application/json");
+		const raw = JSON.stringify({
+			"messages": [
+				{
+					// "destinations": [{"to":"639515663308"}],
+					"destinations": [{"to":"639772167282"}],
+					"from": "ServiceSMS",
+					"text": "Hi Miss, Miss na miss ta naka bala, San-o ta ayhan ka kitaay liwat :)"
+				}
+			]
+		});
+		const requestOptions = {
+			method: "POST",
+			headers: myHeaders,
+			body: raw,
+			redirect: "follow"
+		};
+		fetch("https://3gq25m.api.infobip.com/sms/2/text/advanced", requestOptions)
+		.then((response) => response.text())
+		.then((result) => console.log(result))
+		.catch((error) => console.error(error));
+		sendData(personal_id);
+	}
+	function sendData(personal_id){
+		var loc= document.getElementById("baseurl").value;
+        var redirect=loc+'admin/send_data';
+        $.ajax({
+			url: redirect,
+			type: 'POST',
+			data: 'personal_id='+personal_id,
+            success:function(data){
+            },
+        })
+	}
+
+	function sendSMS1(){
+		var loc= document.getElementById("baseurl").value;
+        var redirect=loc+'admin/send_data1';
+        $.ajax({
+			url: redirect,
+			type: 'POST',
+            success:function(output){
+				console.log(output);
+            },
+        })
+	}
+</script>
 <main id="main">
-   <!--  <section class="breadcrumbs">
-      	<div class="container">
-	        <div class="d-flex justify-content-between align-items-center">
-		        <h2>Contact</h2>
-		        <ol>
-		            <li><a href="index.html">Home</a></li>
-		            <li>Contact</li>
-		        </ol>
-	        </div>
-      	</div>
-    </section> -->
     <section class="contact" >
 	    <div class="container">
 	        <div class="row">
@@ -28,15 +69,17 @@
 			            		</tr>
 			            	</thead>
 			            	<tbody>
+								<?php foreach($approved AS $a){ ?>
 			            		<tr>
-			            			<td class="border p-2 text-sm">Ligaya Reyes</td>
+			            			<td class="border p-2 text-sm"><?php echo $a->fullname; ?></td>
 			            			<td class="border p-2 text-sm" >
 			            				<div class="flex justify-center space-x-1">
-			            					<button class="p-1 px-2 bg-blue-500 text-white text-xs font-bold rounded">Send SMS</button>
-			            					<!-- <button class="p-1 px-2 bg-yellow-500 text-white text-xs font-bold rounded">Move to pending</button> -->
+			            					<button class="p-1 px-2 bg-blue-500 text-white text-xs font-bold rounded" onclick="sendSMS1('<?php echo $a->personal_id; ?>','<?php echo $_SESSION['contact_no']; ?>')">Send SMS</button>
+			            					<input name="baseurl" id="baseurl" value="<?php echo base_url(); ?>" class="form-control" type="hidden" >
 			            				</div>
 			            			</td>
 			            		</tr>
+								<?php } ?>
 			            	</tbody>
 			            </table>
 			        </div>

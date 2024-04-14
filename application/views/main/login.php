@@ -40,7 +40,7 @@
 								<h3 class="text-center font-bold my-3 uppercase">Login</h3>
 								<div class="form-row">
 									<div class="col-md-12 form-group">
-										<input type="text" name="username" class="form-control" id="username" placeholder="Number ID"/>
+										<input type="text" name="username" class="form-control" id="username" placeholder="ID Number"/>
 									</div>
 									<div class="col-md-12 form-group">
 										<input type="password" id="password" class="form-control" name="password" placeholder="Password" />

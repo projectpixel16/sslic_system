@@ -44,9 +44,9 @@
                                     <td colspan='1'>Name:</td>
                                     <td colspan='1'><input type='text' id='name'></td>
                                     <td colspan='1'>Bithdate:</td>
-                                    <td colspan='1'><input type='date' id='bday'></td>
+                                    <td colspan='1'><input type='date' id='bday' onblur='calculate_age()'></td>
                                     <td colspan='1'>Age:</td>
-                                    <td colspan='1'><input type='number' id='age'></td>
+                                    <td colspan='1'><input type='number' id='age' readonly></td>
                                     <td colspan='1'>Sex:</td>
                                     <td colspan='1'>
                                         <select id='sex'>

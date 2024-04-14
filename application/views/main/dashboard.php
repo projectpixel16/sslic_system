@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Moderna Bootstrap Template - Index</title>
+  <title>SILAY SANDIEGO LENDING INVESTOR INC.</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -72,7 +72,7 @@
                     <li><a href="#">Drop Down 5</a></li>
                 </ul>
             </li> -->
-            <li><a href="admin/login" id="login">Login</a></li>
+            <!-- <li><a href="admin/login" id="login">Login</a></li> -->
         </ul>
         </nav><!-- .nav-menu -->
     </div>

@@ -187,10 +187,10 @@ function proceed_btn() {
 			processData: false,
 			contentType: false,
 			success: function (output) {
-				alert(output)
-				// var success=document.getElementById("success");
-				// success.style.display = "block";
-				// document.getElementById("success_msg").innerHTML='Your application has been submitted';
+				var success=document.getElementById("success");
+				success.style.display = "block";
+				document.getElementById("success_msg").innerHTML='Your application has been submitted';
+				window.location.reload();
 			}
 		});
 	//}  
@@ -325,3 +325,15 @@ $("body").on("click", ".remOwned", function() {
 	$('.owned').find('.encumbrance').attr('id','encumbrance'+less);
 	$(this).parents('.owned').remove();
 });
+
+function calculate_age() {
+	var today = new Date();
+	var bday= document.getElementById("bday").value;
+	var birthDate = new Date(bday);
+	var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+	document.getElementById("age").value = age;
+}

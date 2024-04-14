@@ -1,15 +1,38 @@
+<script>
+	function approveApp(personal_id) {
+		var loc= document.getElementById("baseurl").value;
+		var redirect = loc+"admin/approve_application";
+		var conf = confirm('Are you sure you want to approve this application?');
+		if(conf){
+			$.ajax({
+				type: "POST",
+				url: redirect,
+				data: 'personal_id='+personal_id,
+				success: function (output) {
+					window.location.reload();
+				}
+			});
+		}  
+	}
+
+	function declineApp(personal_id) {
+		var loc= document.getElementById("baseurl").value;
+		var redirect = loc+"admin/decline_application";
+		var conf = confirm('Are you sure you want to decline this application?');
+		if(conf){
+			$.ajax({
+				type: "POST",
+				url: redirect,
+				data: 'personal_id='+personal_id,
+				success: function (output) {
+					window.location.reload();
+				}
+			});
+		}  
+	}
+</script>
+
 <main id="main">
-   <!--  <section class="breadcrumbs">
-      	<div class="container">
-	        <div class="d-flex justify-content-between align-items-center">
-		        <h2>Contact</h2>
-		        <ol>
-		            <li><a href="index.html">Home</a></li>
-		            <li>Contact</li>
-		        </ol>
-	        </div>
-      	</div>
-    </section> -->
     <section class="contact">
 	    <div class="container">
 	        <div class="row">
@@ -29,8 +52,9 @@
 			            		</tr>
 			            	</thead>
 			            	<tbody>
+								<?php foreach($pending AS $p){ ?>
 			            		<tr>
-			            			<td class="border p-2 text-sm">Ligaya Reyes</td>
+			            			<td class="border p-2 text-sm"><?php echo $p->fullname ?></td>
 			            			<td class="border p-2 text-sm">
 			            				<div class="flex justify-center">
 			            					<a href="">View</a>
@@ -38,11 +62,13 @@
 			            			</td>
 			            			<td class="border p-2 text-sm" >
 			            				<div class="flex justify-center space-x-1">
-			            					<button class="p-1 px-2 bg-green-500 text-white text-xs font-bold rounded">Approve</button>
-			            					<button class="p-1 px-2 bg-red-500 text-white text-xs font-bold rounded">Decline</button>
+			            					<button class="p-1 px-2 bg-green-500 text-white text-xs font-bold rounded" onclick='approveApp(<?php echo $p->personal_id ?>)'>Approve</button>
+			            					<button class="p-1 px-2 bg-red-500 text-white text-xs font-bold rounded" onclick='declineApp(<?php echo $p->personal_id ?>)'>Decline</button>
+											<input name="baseurl" id="baseurl" value="<?php echo base_url(); ?>" class="form-control" type="hidden" >
 			            				</div>
 			            			</td>
 			            		</tr>
+								<?php } ?>
 			            	</tbody>
 			            </table>
 			        </div>
