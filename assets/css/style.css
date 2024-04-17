@@ -2379,3 +2379,7 @@ section {
   color: #fff;
   transition: 0.4s;
 }
+
+.collapse {
+  visibility: visible!important
+}

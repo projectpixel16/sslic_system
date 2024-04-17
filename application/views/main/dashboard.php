@@ -50,10 +50,10 @@
 
         <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Contact</a></li>
-            <li><a href="portfolio.html">FAQ</a></li>
+            <li class="active"><a href="#hero">Home</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#faqs">FAQ</a></li>
             <!-- <li class="drop-down">
                 <a href="">Drop Down</a>
                 <ul>
@@ -94,7 +94,7 @@
   <main id="main">
 
       <!-- ======= Services Section ======= -->
-      <section class="services">
+      <!-- <section class="services">
         <div class="container">
 
           <div class="row">
@@ -133,10 +133,11 @@
           </div>
 
         </div>
-      </section><!-- End Services Section -->
+      </section> -->
+      <!-- End Services Section -->
 
       <!-- ======= Why Us Section ======= -->
-      <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+      <!-- <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
         <div class="container">
 
           <div class="row">
@@ -163,14 +164,15 @@
           </div>
 
         </div>
-      </section><!-- End Why Us Section -->
+      </section> -->
+      <!-- End Why Us Section -->
 
-      <!-- ======= Features Section ======= -->
-      <section class="features">
+      <!-- ======= About Us ======= -->
+      <section class="features" id="aboutus">
         <div class="container">
 
           <div class="section-title">
-            <h2>Features</h2>
+            <h2>About Us</h2>
             <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
           </div>
 
@@ -243,7 +245,222 @@
           </div>
 
         </div>
-      </section><!-- End Features Section -->
+      </section><!-- End About Us -->
+
+      <!-- ======= Faqs ======= -->
+    <section class="features" id="faqs">
+        <div class="container">
+			<div class="section-title">
+				<h2>FAQs</h2>
+				<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+			</div>
+          	<div class="row" data-aos="fade-up">
+				<div class="col-md-6">
+					<div id="accordion">
+						<div class="card border-none">
+							<div class="" id="headingOne">
+								<h5 class="mb-0">
+									<button class="btn focus:!shadow-none w-full text-left p-3 !border-b uppercase" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									Who can Apply?
+									</button>
+								</h5>
+							</div>
+							<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="card-body pt-0">
+									<ul>
+										<li class="p-0">1. 18 years old and up</li>
+										<li class="p-0">2. Regular Employees of selected Companies collaborated with Silay Sandiego Lending Investor INC. </li>
+										<li class="p-0">3. Atleast 3-4 years of service</li>
+										<li class="p-0">4. Have any of the following VALID IDs :
+											<ul class="ml-3">
+												<li class="p-0">*PASSPORT</li>
+												<li class="p-0">*NATIONAL ID</li>
+												<li class="p-0">*DRIVERS LINCENCE</li>
+												<li class="p-0">SSS</li>
+												<li class="p-0">UMID</li>
+												<li class="p-0">POSTAL ID</li>
+												<li class="p-0">PRC ID S.</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<hr class="m-0">
+						<div class="card border-none">
+							<div class="" id="headingTwo">
+								<h5 class="mb-0">
+									<button class="btn focus:!shadow-none w-full text-left p-3 collapsed uppercase" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									How long is the process?
+									</button>
+								</h5>
+							</div>
+							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+								<div class="card-body pt-0">
+									<ul>
+										<li>1. Apply on our website.</li>
+										<li>2. Get verified and approved.</li>
+										<li>3. Recieved the sms to proceed to next step of application.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<hr class="m-0">
+						<div class="card border-none">
+							<div class="" id="headingThree">
+								<h5 class="mb-0">
+									<button class="btn focus:!shadow-none w-full text-left p-3 collapsed uppercase" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									How long can I borrow?
+									</button>
+								</h5>
+							</div>
+							<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+								<div class="card-body pt-0">
+									Our clients can tailor-fit their loan tenor to suit their needs. Loans can be availed from 7 up to 14days, in order to ensure you can pay according to your cashflow.
+								</div>
+							</div>
+						</div>
+						<hr class="m-0">
+						<div class="card border-none">
+							<div class="" id="headingThree">
+								<h5 class="mb-0">
+									<button class="btn focus:!shadow-none w-full text-left p-3 collapsed uppercase" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+									How much is the loan interest?
+									</button>
+								</h5>
+							</div>
+							<div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+								<div class="card-body pt-0">
+									3% is the interest. We have provide you a calculation before approval. 
+								</div>
+							</div>
+						</div>
+						<hr class="m-0">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div id="accordion2">
+						<div class="card border-none">
+							<div class="" id="headingFive">
+								<h5 class="mb-0">
+									<button class="btn focus:!shadow-none w-full text-left p-3 !border-b uppercase" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+									How do I know if my application is approved?
+									</button>
+								</h5>
+							</div>
+							<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion2">
+								<div class="card-body pt-0">
+									You may recieve a Sms notification with the number you provided in the application. 
+								</div>
+							</div>
+						</div>
+						<hr class="m-0">
+						<div class="card border-none">
+							<div class="" id="headingSix">
+								<h5 class="mb-0">
+									<button class="btn focus:!shadow-none w-full text-left p-3 collapsed uppercase" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+									Do I need to sign any paper contract? 
+									</button>
+								</h5>
+							</div>
+							<div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion2">
+								<div class="card-body pt-0">
+									Yes, if you are approved, that's the next step you need to do. 
+								</div>
+							</div>
+						</div>
+						<hr class="m-0">
+						<div class="card border-none">
+							<div class="" id="headingSeven">
+								<h5 class="mb-0">
+									<button class="btn focus:!shadow-none w-full text-left p-3 collapsed uppercase" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+									Need help submitting your application? Reach us at:
+									</button>
+								</h5>
+							</div>
+							<div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion2">
+								<div class="card-body pt-0">
+									silaysandiegolending@gmail.com
+
+									Subject title:
+									LOAN APPLICATION ERROR
+
+									Email body should include the following
+									*FULLNAME as it appears on application
+									*Mobile number
+									Write additional request/Concern.
+								</div>
+							</div>
+						</div>
+						<hr class="m-0">
+					</div>
+				</div>
+          	</div>
+        </div>
+    </section><!-- End Faqs -->
+
+	<section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500" id="contact" style="background-color: #1e4356;">
+      	<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+
+					<div class="row">
+					<div class="col-md-12">
+						<div class="info-box bg-white !shadow-none">
+						<i class="bx bx-map"></i>
+						<h3>Our Address</h3>
+						<p>A108 Adam Street, New York, NY 535022</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="info-box bg-white !shadow-none">
+						<i class="bx bx-envelope"></i>
+						<h3>Email Us</h3>
+						<p>info@example.com<br>contact@example.com</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="info-box bg-white !shadow-none">
+						<i class="bx bx-phone-call"></i>
+						<h3>Call Us</h3>
+						<p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+						</div>
+					</div>
+					</div>
+
+				</div>
+				<div class="col-lg-6">
+					<form action="forms/contact.php" method="post" role="form" class="php-email-form bg-white !shadow-none">
+					<div class="form-row">
+						<div class="col-md-6 form-group">
+						<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+						<div class="validate"></div>
+						</div>
+						<div class="col-md-6 form-group">
+						<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+						<div class="validate"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+						<div class="validate"></div>
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+						<div class="validate"></div>
+					</div>
+					<div class="mb-3">
+						<div class="loading">Loading</div>
+						<div class="error-message"></div>
+						<div class="sent-message">Your message has been sent. Thank you!</div>
+					</div>
+					<br>
+					<div class="text-center"><button type="submit">Send Message</button></div>
+					</form>
+				</div>
+			</div>
+      	</div>
+    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
